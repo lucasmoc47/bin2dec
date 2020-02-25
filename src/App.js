@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 import './App.css';
@@ -9,7 +9,6 @@ function App() {
 	const [bin, setBin] = useState('')
 	const [dec, setDec] = useState(0)
 	const [showAlert, setAlert] = useState('')
-	const resultRef = useRef(null)
 
 	function handleChange(event) {
 		const { value } = event.target
@@ -46,7 +45,7 @@ function App() {
 				</div>
 				<div className="result">
 					<label htmlFor="result">Decimal: </label>
-					<input type="number" id="result" disabled={true} value={dec} ref={resultRef} />
+					<input type="number" id="result" disabled={true} value={dec} />
 				</div>
 				<CopyToClipboard onCopy={handleClick} text={dec}>
 					<div className="button">
