@@ -48,8 +48,8 @@ function App() {
 					<label htmlFor="result">Decimal: </label>
 					<input type="number" id="result" disabled={true} value={dec} ref={resultRef} />
 				</div>
-				<CopyToClipboard text={dec}>
-					<div className="button" onClick={handleClick}>
+				<CopyToClipboard onCopy={handleClick} text={dec}>
+					<div className="button">
 						<p>Copy</p>
 						<img src={CopyIcon} alt="copy" />
 						<div className={"copyAlert " + showAlert}><span>Copied!</span></div>
